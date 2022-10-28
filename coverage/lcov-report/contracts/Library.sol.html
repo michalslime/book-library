@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Library.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Library.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>34/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.83% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>51/51</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+pragma abicoder v2;
+&nbsp;
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "hardhat/console.sol";
+&nbsp;
+contract Library is Ownable {
+    using SafeMath for uint256;
+&nbsp;
+    struct Book {
+        string name;
+        uint256 availableCopies;
+        uint256 ownerCount;
+        mapping(uint256 =&gt; address) ownersHistory;
+    }
+&nbsp;
+    Book myBook;
+&nbsp;
+    uint256 public bookCount;
+&nbsp;
+    mapping(string =&gt; bool) private isPresent;
+    mapping(address =&gt; mapping(uint256 =&gt; bool)) private isAlreadyIssued;
+    mapping(uint256 =&gt; Book) public BookLedger;
+&nbsp;
+    modifier bookNotPresent(string memory _name) {
+        require(!isPresent[_name], "Book Already present");
+        _;
+    }
+&nbsp;
+    function _getNextBookId() private view returns (uint256) {
+        return bookCount.add(1);
+    }
+&nbsp;
+    function _increment() private {
+        bookCount = bookCount.add(1);
+    }
+&nbsp;
+    function addBook(string memory _name, uint256 _copies)
+        external
+        onlyOwner
+        bookNotPresent(_name)
+    {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(bytes(_name).length != 0, "Name cannot be empty");
+        isPresent[_name] = true;
+        uint256 _bookId = _getNextBookId();
+        console.log('_bookId: %s', _bookId);
+        Book storage book = BookLedger[_bookId];
+        book.name = _name;
+        book.availableCopies = _copies;
+        console.log('BookLedger[1].ownerCount: %s', BookLedger[1].ownerCount);
+        _increment();
+    }
+&nbsp;
+    function addBookCopies(uint256 _bookId, uint256 _copies)
+        external
+        <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner
+    {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_copies &gt; 0, "!zero");
+        Book storage book = BookLedger[_bookId];
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(bytes(book.name).length != 0, "Book does not exist");
+        book.availableCopies = book.availableCopies.add(_copies);
+    }
+&nbsp;
+    function borrowBook(uint256 _id) external {
+        console.log("Entering borrowBook");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!isAlreadyIssued[msg.sender][_id], "Book is already issued");
+        isAlreadyIssued[msg.sender][_id] = true;
+        Book storage book = BookLedger[_id];
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(book.availableCopies.sub(1) &gt;= 0);
+        console.log('book.availableCopies: %s', book.availableCopies);
+        book.availableCopies = book.availableCopies.sub(1);
+        console.log('Borrowing addres: %s', msg.sender);
+        book.ownersHistory[book.ownerCount] = msg.sender;
+        book.ownerCount = book.ownerCount.add(1);
+        console.log('BookLedger[1].ownerCount: %s', BookLedger[1].ownerCount);
+    }
+&nbsp;
+    function returnBook(uint256 _id) external {
+        console.log("Entering returnBook");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAlreadyIssued[msg.sender][_id], "Book is not issued");
+        Book storage book = BookLedger[_id];
+        book.availableCopies = book.availableCopies.add(1);
+        isAlreadyIssued[msg.sender][_id] = false;
+    }
+&nbsp;
+    function getAllAvailableBooks() external view returns (uint256[] memory) {
+        uint256 currentIndex = 0;
+        for (uint256 index = 1; index &lt;= bookCount; index++) {
+            if (!isAlreadyIssued[msg.sender][index] &amp;&amp; BookLedger[index].availableCopies &gt; 0) {
+                currentIndex++;
+            }
+        }
+        uint256[] memory result = new uint256[](currentIndex);
+        currentIndex = 0;
+        for (uint256 index = 1; index &lt;= bookCount; index++) {
+            if (!isAlreadyIssued[msg.sender][index] &amp;&amp; BookLedger[index].availableCopies &gt; 0) {
+                result[currentIndex] = index;
+                currentIndex++;
+            }
+        }
+        return result;
+    }
+&nbsp;
+    function getOwnerHistoryOfBook(uint256 _id)
+        public
+        view
+        returns (address[] memory)
+    {
+        console.log("Entering getOwnerHistoryOfBook");
+        console.log("BookLedger[_id].ownerCount: %s", BookLedger[_id].ownerCount);
+        address[] memory result = new address[](BookLedger[_id].ownerCount);
+        for (uint256 index = 0; index &lt; result.length; index++) {
+            result[index] = BookLedger[_id].ownersHistory[index];
+        }
+        return result;
+    }
+&nbsp;
+    function getBookDetail(uint256 _id)
+        public
+        view
+        returns (string memory, uint256)
+    {
+        return (BookLedger[_id].name, BookLedger[_id].availableCopies);
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 27 2022 16:10:38 GMT+0200 (Central European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
