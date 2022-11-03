@@ -30,9 +30,9 @@ async function deployLibraryContract() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-// deployLibraryContract().catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
+deployLibraryContract().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
-module.exports = deployLibraryContract;
+// module.exports = deployLibraryContract;
