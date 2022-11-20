@@ -45,11 +45,11 @@ contract Library is Ownable {
         require(bytes(_name).length != 0, "Name cannot be empty");
         isPresent[_name] = true;
         uint256 _bookId = _getNextBookId();
-        console.log('_bookId: %s', _bookId);
+        // console.log('_bookId: %s', _bookId);
         Book storage book = BookLedger[_bookId];
         book.name = _name;
         book.availableCopies = _copies;
-        console.log('BookLedger[1].ownerCount: %s', BookLedger[1].ownerCount);
+        // console.log('BookLedger[1].ownerCount: %s', BookLedger[1].ownerCount);
         _increment();
     }
 
@@ -64,21 +64,21 @@ contract Library is Ownable {
     }
 
     function borrowBook(uint256 _id) external {
-        console.log("Entering borrowBook");
+        // console.log("Entering borrowBook");
         require(!isAlreadyIssued[msg.sender][_id], "Book is already issued");
         isAlreadyIssued[msg.sender][_id] = true;
         Book storage book = BookLedger[_id];
         require(book.availableCopies.sub(1) >= 0);
-        console.log('book.availableCopies: %s', book.availableCopies);
+        // console.log('book.availableCopies: %s', book.availableCopies);
         book.availableCopies = book.availableCopies.sub(1);
-        console.log('Borrowing addres: %s', msg.sender);
+        // console.log('Borrowing addres: %s', msg.sender);
         book.ownersHistory[book.ownerCount] = msg.sender;
         book.ownerCount = book.ownerCount.add(1);
-        console.log('BookLedger[1].ownerCount: %s', BookLedger[1].ownerCount);
+        // console.log('BookLedger[1].ownerCount: %s', BookLedger[1].ownerCount);
     }
 
     function returnBook(uint256 _id) external {
-        console.log("Entering returnBook");
+        // console.log("Entering returnBook");
         require(isAlreadyIssued[msg.sender][_id], "Book is not issued");
         Book storage book = BookLedger[_id];
         book.availableCopies = book.availableCopies.add(1);
@@ -108,8 +108,8 @@ contract Library is Ownable {
         view
         returns (address[] memory)
     {
-        console.log("Entering getOwnerHistoryOfBook");
-        console.log("BookLedger[_id].ownerCount: %s", BookLedger[_id].ownerCount);
+        // console.log("Entering getOwnerHistoryOfBook");
+        // console.log("BookLedger[_id].ownerCount: %s", BookLedger[_id].ownerCount);
         address[] memory result = new address[](BookLedger[_id].ownerCount);
         for (uint256 index = 0; index < result.length; index++) {
             result[index] = BookLedger[_id].ownersHistory[index];

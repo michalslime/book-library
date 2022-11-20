@@ -6,7 +6,9 @@ module.exports = {
   networks: {
     goerli: {
       url: "https://goerli.infura.io/v3/7c4090b24e6f458bbb026743f6140e1e",
-      accounts: ['dbcfe59c3d94960e994afec103b4fc752c700d12209fb19f9a9a22d294105cd2']
+      accounts: ['dbcfe59c3d94960e994afec103b4fc752c700d12209fb19f9a9a22d294105cd2'],
+      allowUnlimitedContractSize: true,
+      ga
     }
   },
   etherscan: {
